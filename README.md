@@ -128,3 +128,24 @@ function getFlags(DataTypes.ReserveConfigurationMap storage self)
   
 (bool isActive, bool isFrozen, , ) = reserve.configuration.getFlags();
 ```
+
+## [[OpenZeppelin] Slightly reduce ERC721, ERC20 deployment gas cost](https://github.com/OpenZeppelin/openzeppelin-contracts/issues/2665)
+
+### ERC721
+```solidity
+  require(to != owner, "ERC721: approval to current owner");
+  
+  //to
+  
+   require(owner != to, "ERC721: approval to current owner");
+```
+### ERC20
+```solidity
+_approve(_msgSender(), spender, _allowances[_msgSender()][spender] + addedValue);
+
+//to
+
+_approve(_msgSender(), spender, addedValue + _allowances[_msgSender()][spender]);
+```
+
+
