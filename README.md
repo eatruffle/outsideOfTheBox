@@ -155,7 +155,7 @@ _approve(_msgSender(), spender, addedValue + _allowances[_msgSender()][spender])
 
 ![ERC20-080](https://user-images.githubusercontent.com/85684666/122904198-688f5380-d350-11eb-9cd0-a21bea228cf7.png)
 
-###[[UniswapV3] Private method instead of inlining](https://github.com/Uniswap/uniswap-v3-core/blob/main/contracts/NoDelegateCall.sol)
+## [[UniswapV3] Private method instead of inlining](https://github.com/Uniswap/uniswap-v3-core/blob/main/contracts/NoDelegateCall.sol)
 
 ```solidity
     function checkNotDelegateCall() private view {
