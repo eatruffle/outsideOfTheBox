@@ -168,3 +168,27 @@ _approve(_msgSender(), spender, addedValue + _allowances[_msgSender()][spender])
         _;
     }
 ```
+## [[Hardhat-web3] Plugin connection](https://hardhat.org/plugins/nomiclabs-hardhat-web3.html)
+The hardhat-web3 plugin allows on connection the web3js library with the hardhat's context.
+
+One approach is using base hardhat context. After the implementation of hardhat-web3 library to project (require("@nomiclabs/hardhat-web3");
+in hardhat.config.js). The web3 provider is ready to use. Library add Web3 and web3 to the HardhatRuntimeEnvironment.
+ 
+```javascript
+## script.js
+task("accounts", "Prints accounts", async (_, { web3 }) => {
+  console.log(await web3.eth.getAccounts());
+});
+```
+and start with npx hardhat run script.js
+
+But what if we would like to run the web3 with the hardhat in clear node app??
+To this you can use require("hardhat") and after this will be possible access to the ethers and web3 provider.
+```javascript
+###nodeHardhat.js
+const hre = require("hardhat");
+
+const ethers = hre.ethers;
+const web3 = hre.web3;
+```
+strt with node nodeHardhat.js 
