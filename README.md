@@ -194,6 +194,10 @@ const web3 = hre.web3;
 start with node nodeHardhat.js 
 
 ## [[Hardhat node] problem with Nodemon Error: System limit for number of file watchers reached]()
+Quite possible is observe error during hardhat node running [Nodemon Error: System limit for number of file watchers reached]
+npx hardhat node
+
+to resolve this please trie
 ```bash
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 ```
