@@ -192,3 +192,8 @@ const ethers = hre.ethers;
 const web3 = hre.web3;
 ```
 start with node nodeHardhat.js 
+
+## [[Hardhat node] problem with Nodemon Error: System limit for number of file watchers reached]()
+```bash
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
